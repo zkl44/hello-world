@@ -7,3 +7,6 @@ https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
 additional info on remotes -- less helpful :(
 https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches
 
+** To add git cred helper so you don't need to constantly provide creds **
+https://help.github.com/articles/caching-your-github-password-in-git/
+
