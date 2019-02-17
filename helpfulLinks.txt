@@ -1,0 +1,9 @@
+create new branch
+https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
+
+working with remotes
+https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
+
+additional info on remotes -- less helpful :(
+https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches
+
