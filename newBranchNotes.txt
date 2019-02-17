@@ -1,0 +1,123 @@
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub
+$ mkdir repos
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub
+$ cd repos
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos
+$ git clone https://github.com/zkl44/hello-world.git
+Cloning into 'hello-world'...
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 11 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (11/11), done.
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos
+$ cd hello-world/
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (master)
+$ git pull
+Already up to date.
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (master)
+$ git checkout -b update-html
+Switched to a new branch 'update-html'
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (update-html)
+$ git push origin update-html
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+Username for 'https://github.com': zkl44
+Password for 'https://zkl44@github.com':
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'update-html' on GitHub by visiting:
+remote:      https://github.com/zkl44/hello-world/pull/new/update-html
+remote:
+To https://github.com/zkl44/hello-world.git
+ * [new branch]      update-html -> update-html
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (update-html)
+$ git branch -a
+  master
+* update-html
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/update-html
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (update-html)
+$ git remote add someShortName https://github.com/zkl44/hello-world/pull/new/update-html
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (update-html)
+$ git remote -v
+origin  https://github.com/zkl44/hello-world.git (fetch)
+origin  https://github.com/zkl44/hello-world.git (push)
+someShortName   https://github.com/zkl44/hello-world/pull/new/update-html (fetch)
+someShortName   https://github.com/zkl44/hello-world/pull/new/update-html (push)
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (update-html)
+$ git status
+On branch update-html
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (update-html)
+$ git add .
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (update-html)
+$ git status
+On branch update-html
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   index.html
+
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (update-html)
+$ git commit -m "Add Hello World heading"
+[update-html 4197848] Add Hello World heading
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (update-html)
+$ git push
+fatal: The current branch update-html has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin update-html
+
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (update-html)
+$ git push someShortName update-html
+fatal: unable to update url base from redirection:
+  asked for: https://github.com/zkl44/hello-world/pull/new/update-html/info/refs?service=git-receive-pack
+   redirect: https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fzkl44%2Fhello-world%2Fpull%2Fnew%2Fupdate-html%2Finfo%2Frefs%3Fservice%3Dgit-receive-pack
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (update-html)
+$ git push --set-upstream origin update-html
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+Username for 'https://github.com': zkl44
+Password for 'https://github.com':
+remote: Anonymous access to zkl44/hello-world.git denied.
+fatal: Authentication failed for 'https://github.com/zkl44/hello-world.git/'
+
+zach@zlaffey MINGW64 ~/Desktop/Main/gitHub/repos/hello-world (update-html)
+$ git push --set-upstream origin update-html
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+Username for 'https://github.com': zkl44
+Password for 'https://zkl44@github.com':
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 308 bytes | 308.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/zkl44/hello-world.git
+   ee4ae17..4197848  update-html -> update-html
+Branch 'update-html' set up to track remote branch 'update-html' from 'origin'.
